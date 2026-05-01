@@ -39,4 +39,17 @@ public class BookManager {
 
         System.out.println("Book added successfully.");
     }
+
+
+    public void listBooks() {
+        if (books.isEmpty()) {
+            System.out.println("No books found.");
+            return;
+        }
+
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i); //리스트에서 i번째 책 하나 꺼냄 ArrayList.get() 메소드
+            System.out.println(book);
+        }
+    }
 }

@@ -18,18 +18,22 @@ public class Main {
 
             if (menu == 1) {
                 manager.addBook();
-            } else if (menu == 2) {
+            } 
+            
+            else if (menu == 2) {
                 manager.listBooks();
-            } else if (menu == 3) {
-                manager.updateBook();
-            } else if (menu == 4) {
-                manager.deleteBook();
-            } else if (menu == 0) {
-                System.out.println("Program exited.");
-                break;
-            } else {
-                System.out.println("Invalid menu.");
-            }
+            } 
+            
+            //else if (menu == 3) {
+            //     manager.updateBook();
+            // } else if (menu == 4) {
+            //     manager.deleteBook();
+            // } else if (menu == 0) {
+            //     System.out.println("Program exited.");
+            //     break;
+            // } else {
+            //     System.out.println("Invalid menu.");
+            // }
         }
     }
 }
