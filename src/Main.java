@@ -27,14 +27,14 @@ public class Main {
             else if (menu == 3) {
                 manager.updateBook();
             } 
-            //else if (menu == 4) {
-            //     manager.deleteBook();
-            // } else if (menu == 0) {
-            //     System.out.println("Program exited.");
-            //     break;
-            // } else {
-            //     System.out.println("Invalid menu.");
-            // }
+            else if (menu == 4) {
+                manager.deleteBook();
+            } else if (menu == 0) {
+                System.out.println("Program exited.");
+                break;
+            } else {
+                System.out.println("Invalid menu.");
+            }
         }
     }
 }

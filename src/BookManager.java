@@ -3,36 +3,36 @@ import java.util.Scanner;
 
 public class BookManager {
     private ArrayList<Book> books;
-    private Scanner sc;
+    private Scanner s;
 
     public BookManager() {
         books = new ArrayList<>();
-        sc = new Scanner(System.in);
+        s = new Scanner(System.in);
     }
 
     public void addBook() {
         System.out.print("ID: ");
-        int id = sc.nextInt();
-        sc.nextLine();
+        int id = s.nextInt();
+        s.nextLine();
 
         System.out.print("Title: ");
-        String title = sc.nextLine();
+        String title = s.nextLine();
 
         System.out.print("Author: ");
-        String author = sc.nextLine();
+        String author = s.nextLine();
 
         System.out.print("Publisher: ");
-        String publisher = sc.nextLine();
+        String publisher = s.nextLine();
 
         System.out.print("Category: ");
-        String category = sc.nextLine();
+        String category = s.nextLine();
 
         System.out.print("Status: ");
-        String status = sc.nextLine();
+        String status = s.nextLine();
 
         System.out.print("Rating: ");
-        int rating = sc.nextInt();
-        sc.nextLine();
+        int rating = s.nextInt();
+        s.nextLine();
 
         Book book = new Book(id, title, author, publisher, category, status, rating);
         books.add(book);
@@ -55,31 +55,31 @@ public class BookManager {
 
     public void updateBook() {
         System.out.print("Enter ID to update: ");
-        int id = sc.nextInt();
-        sc.nextLine();
+        int id = s.nextInt();
+        s.nextLine();
 
         for (int i = 0; i < books.size(); i++) {
             Book book = books.get(i);
 
             if (book.getId() == id) {
                 System.out.print("New Title: ");
-                book.setTitle(sc.nextLine());
+                book.setTitle(s.nextLine());
 
                 System.out.print("New Author: ");
-                book.setAuthor(sc.nextLine());
+                book.setAuthor(s.nextLine());
 
                 System.out.print("New Publisher: ");
-                book.setPublisher(sc.nextLine());
+                book.setPublisher(s.nextLine());
 
                 System.out.print("New Category: ");
-                book.setCategory(sc.nextLine());
+                book.setCategory(s.nextLine());
 
                 System.out.print("New Status: ");
-                book.setStatus(sc.nextLine());
+                book.setStatus(s.nextLine());
 
                 System.out.print("New Rating: ");
-                book.setRating(sc.nextInt());
-                sc.nextLine();
+                book.setRating(s.nextInt());
+                s.nextLine();
 
                 System.out.println("Book updated successfully.");
                 return;
@@ -88,6 +88,24 @@ public class BookManager {
 
         System.out.println("Book not found.");
     }
+
+    public void deleteBook() {
+        System.out.print("Enter ID to delete: ");
+        int id = s.nextInt();
+        s.nextLine(); // 남은 엔터 제거
+
+        for (int i = 0; i < books.size(); i++) {
+        if (books.get(i).getId() == id) {
+            books.remove(i);
+            System.out.println("Book deleted successfully.");
+            return;
+        }
+    }
+    System.out.println("Book not found.");
+    
+    }
+
+
 
 
 }
