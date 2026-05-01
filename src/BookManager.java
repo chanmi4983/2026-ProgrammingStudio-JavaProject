@@ -48,8 +48,46 @@ public class BookManager {
         }
 
         for (int i = 0; i < books.size(); i++) {
-            Book book = books.get(i); //리스트에서 i번째 책 하나 꺼냄 ArrayList.get() 메소드
+            Book book = books.get(i); //리스트에서 i번째 책 하나 꺼냄 ArrayList.get() 메소드 사용
             System.out.println(book);
         }
     }
+
+    public void updateBook() {
+        System.out.print("Enter ID to update: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
+
+            if (book.getId() == id) {
+                System.out.print("New Title: ");
+                book.setTitle(sc.nextLine());
+
+                System.out.print("New Author: ");
+                book.setAuthor(sc.nextLine());
+
+                System.out.print("New Publisher: ");
+                book.setPublisher(sc.nextLine());
+
+                System.out.print("New Category: ");
+                book.setCategory(sc.nextLine());
+
+                System.out.print("New Status: ");
+                book.setStatus(sc.nextLine());
+
+                System.out.print("New Rating: ");
+                book.setRating(sc.nextInt());
+                sc.nextLine();
+
+                System.out.println("Book updated successfully.");
+                return;
+            }
+        }
+
+        System.out.println("Book not found.");
+    }
+
+
 }

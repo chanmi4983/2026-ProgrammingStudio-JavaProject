@@ -24,9 +24,10 @@ public class Main {
                 manager.listBooks();
             } 
             
-            //else if (menu == 3) {
-            //     manager.updateBook();
-            // } else if (menu == 4) {
+            else if (menu == 3) {
+                manager.updateBook();
+            } 
+            //else if (menu == 4) {
             //     manager.deleteBook();
             // } else if (menu == 0) {
             //     System.out.println("Program exited.");
