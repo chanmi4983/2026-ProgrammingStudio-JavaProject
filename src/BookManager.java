@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import ICRUD;
 
-public class BookManager {
+public class BookManager implements ICRUD {
     private ArrayList<Book> books;
-    private Scanner s;
+    private Scanner s;   
 
     public BookManager() {
         books = new ArrayList<>();
