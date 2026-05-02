@@ -5,4 +5,6 @@ public interface ICRUD {
     void deleteBook();
     void saveBooks();
     void loadBooks();
+    void loadBooks();
+    void searchBook();
 }

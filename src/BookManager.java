@@ -171,14 +171,34 @@ public class BookManager implements ICRUD {
     }
 
     public void addTestData() {
-    books.add(new Book(1, "Java", "Kim", "Hanbit", "Programming", "읽는중", 5));
-    books.add(new Book(2, "OS", "Lee", "Pearson", "CS", "완료", 4));
-    books.add(new Book(3, "Network", "Park", "McGraw", "CS", "미완료", 3));
-    books.add(new Book(4, "DB", "Choi", "Oracle", "CS", "읽는중", 5));
-    books.add(new Book(5, "AI", "Jung", "Springer", "AI", "미완료", 4));
+        books.add(new Book(1, "Java", "Kim", "Hanbit", "Programming", "읽는중", 5));
+        books.add(new Book(2, "OS", "Lee", "Pearson", "CS", "완료", 4));
+        books.add(new Book(3, "Network", "Park", "McGraw", "CS", "미완료", 3));
+        books.add(new Book(4, "DB", "Choi", "Oracle", "CS", "읽는중", 5));
+        books.add(new Book(5, "AI", "Jung", "Springer", "AI", "미완료", 4));
 
-    System.out.println("테스트 데이터 추가됨");
+        System.out.println("테스트 데이터 추가됨");
     }
+
+    public void searchBook() {
+    System.out.print("Enter title to search: ");
+    String keyword = s.nextLine();
+
+    boolean found = false;
+
+    for (int i = 0; i < books.size(); i++) {
+        Book book = books.get(i);
+
+        if (book.getTitle().contains(keyword)) {
+            System.out.println(book);
+            found = true;
+        }
+    }
+
+    if (found == false) {
+        System.out.println("No matching book found.");
+    }
+}
 
 
 
