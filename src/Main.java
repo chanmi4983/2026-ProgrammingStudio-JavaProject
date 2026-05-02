@@ -5,9 +5,6 @@ public class Main {
         Scanner s = new Scanner(System.in);
         BookManager manager = new BookManager();
 
-        System.out.println("기존의 책들");
-        manager.addTestData();
-
 
 
         while (true) {
@@ -21,21 +18,26 @@ public class Main {
             System.out.println("7. Search Book");
             System.out.println("8. Filter by Category");
             System.out.println("9. Recommend Book"); 
+            System.out.println("10. Add Test Data");
             System.out.println("0. Exit");
+            System.out.println();
             System.out.print("Select menu: ");
 
             int menu = s.nextInt();
 
             if (menu == 1) {
                 manager.addBook();
+                System.out.println();
             } 
             
             else if (menu == 2) {
                 manager.listBooks();
+                System.out.println();
             } 
             
             else if (menu == 3) {
                 manager.updateBook();
+                System.out.println();
             } 
             else if (menu == 4) {
                 manager.deleteBook();
@@ -49,6 +51,10 @@ public class Main {
                 manager.filterByCategory();
             }else if (menu == 9) {
                 manager.recommendBook();
+            }
+            else if (menu == 10) {
+                System.out.println("테스트 데이터");
+                manager.addTestData();
             }
              else if (menu == 0) {
                 System.out.println("Program exited.");

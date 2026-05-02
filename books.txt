@@ -1,4 +1,4 @@
-1,Java,Kim,Hanbit,Programming,읽는중,5
+1,Programming Studio,Chanmi La,Handong,CS,읽는중,4
 2,OS,Lee,Pearson,CS,완료,4
 3,Network,Park,McGraw,CS,미완료,3
 4,DB,Choi,Oracle,CS,읽는중,5
