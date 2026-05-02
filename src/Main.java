@@ -11,6 +11,7 @@ public class Main {
             System.out.println("2. List Books");
             System.out.println("3. Update Book");
             System.out.println("4. Delete Book");
+            System.out.println("5. Save Book");
             System.out.println("0. Exit");
             System.out.print("Select menu: ");
 
@@ -29,6 +30,8 @@ public class Main {
             } 
             else if (menu == 4) {
                 manager.deleteBook();
+            }else if (menu == 5) {
+                manager.saveBooks();
             } else if (menu == 0) {
                 System.out.println("Program exited.");
                 break;

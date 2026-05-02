@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import ICRUD;
+
+import java.io.PrintWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class BookManager implements ICRUD {
     private ArrayList<Book> books;
@@ -105,6 +108,32 @@ public class BookManager implements ICRUD {
     System.out.println("Book not found.");
     
     }
+
+    public void saveBooks() { //책 저장하기 
+    try {
+        PrintWriter pw = new PrintWriter(new FileWriter("books.txt"));
+
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
+
+            pw.println(
+                book.getId() + "," +
+                book.getTitle() + "," +
+                book.getAuthor() + "," +
+                book.getPublisher() + "," +
+                book.getCategory() + "," +
+                book.getStatus() + "," +
+                book.getRating()
+            );
+        }
+
+        pw.close();
+        System.out.println("Books saved successfully.");
+
+    } catch (IOException e) {
+        System.out.println("Error saving file.");
+    }
+}
 
 
 
