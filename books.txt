@@ -1,1 +1,5 @@
-22200240,likey,mimi,hive,science,borrow,5
+1,Java,Kim,Hanbit,Programming,읽는중,5
+2,OS,Lee,Pearson,CS,완료,4
+3,Network,Park,McGraw,CS,미완료,3
+4,DB,Choi,Oracle,CS,읽는중,5
+5,AI,Jung,Springer,AI,미완료,4

@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+//로드용
+import java.io.File;
+import java.io.FileNotFoundException;
 
 import java.io.PrintWriter;
 import java.io.FileWriter;
@@ -134,6 +137,48 @@ public class BookManager implements ICRUD {
         System.out.println("Error saving file.");
     }
 }
+    public void loadBooks() {
+    try {
+        File file = new File("books.txt");
+        Scanner fileScanner = new Scanner(file);
+
+        books.clear();
+
+        while (fileScanner.hasNextLine()) {
+            String line = fileScanner.nextLine();
+            String[] data = line.split(",");
+
+            if (data.length == 7) {
+                int id = Integer.parseInt(data[0]);
+                String title = data[1];
+                String author = data[2];
+                String publisher = data[3];
+                String category = data[4];
+                String status = data[5];
+                int rating = Integer.parseInt(data[6]);
+
+                Book book = new Book(id, title, author, publisher, category, status, rating);
+                books.add(book);
+            }
+        }
+
+        fileScanner.close();
+        System.out.println("Load File");
+
+    } catch (FileNotFoundException e) {
+        System.out.println("저장된 파일이 없습니다.");
+        }
+    }
+
+    public void addTestData() {
+    books.add(new Book(1, "Java", "Kim", "Hanbit", "Programming", "읽는중", 5));
+    books.add(new Book(2, "OS", "Lee", "Pearson", "CS", "완료", 4));
+    books.add(new Book(3, "Network", "Park", "McGraw", "CS", "미완료", 3));
+    books.add(new Book(4, "DB", "Choi", "Oracle", "CS", "읽는중", 5));
+    books.add(new Book(5, "AI", "Jung", "Springer", "AI", "미완료", 4));
+
+    System.out.println("테스트 데이터 추가됨");
+    }
 
 
 

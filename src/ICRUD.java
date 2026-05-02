@@ -3,4 +3,6 @@ public interface ICRUD {
     void listBooks();
     void updateBook();
     void deleteBook();
+    void saveBooks();
+    void loadBooks();
 }
