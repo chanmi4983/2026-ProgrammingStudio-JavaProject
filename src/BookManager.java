@@ -55,10 +55,17 @@ public class BookManager implements ICRUD {
             return;
         }
 
+        StringBuilder sb = new StringBuilder();
+
         for (int i = 0; i < books.size(); i++) {
-            Book book = books.get(i); //리스트에서 i번째 책 하나 꺼냄 ArrayList.get() 메소드 사용
-            System.out.println(book);
+            sb.append(books.get(i)).append("\n");
         }
+
+        System.out.println(sb.toString());
+    }
+
+    public void addBook(Book book) {
+        books.add(book);
     }
 
     public void updateBook() {

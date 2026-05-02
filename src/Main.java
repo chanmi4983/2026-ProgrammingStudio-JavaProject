@@ -20,7 +20,7 @@ public class Main {
             System.out.println("6. Load Book");
             System.out.println("7. Search Book");
             System.out.println("8. Filter by Category");
-            System.out.println("9. addTest Book"); //입력 매번하기 힘들어서 임시 데이터 추가
+            System.out.println("9. Recommend Book"); 
             System.out.println("0. Exit");
             System.out.print("Select menu: ");
 
