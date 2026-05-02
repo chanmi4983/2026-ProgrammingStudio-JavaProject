@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Random;
 
 public class BookManager implements ICRUD {
     private ArrayList<Book> books;
@@ -199,6 +200,38 @@ public class BookManager implements ICRUD {
         System.out.println("No matching book found.");
     }
 }
+
+    public void filterByCategory() {
+    System.out.print("Enter category to filter: ");
+    String category = s.nextLine();
+
+    boolean found = false;
+
+    for (int i = 0; i < books.size(); i++) {
+        Book book = books.get(i);
+
+        if (book.getCategory().equals(category)) {
+            System.out.println(book);
+            found = true;
+        }
+    }
+
+    if (found == false) {
+        System.out.println("No books in this category.");
+    }
+}
+    public void recommendBook() {
+        if (books.isEmpty()) {
+            System.out.println("No books available.");
+            return;
+        }
+
+        Random rand = new Random();
+        int index = rand.nextInt(books.size());
+
+        System.out.println("Recommended Book:");
+        System.out.println(books.get(index));
+    }
 
 
 
